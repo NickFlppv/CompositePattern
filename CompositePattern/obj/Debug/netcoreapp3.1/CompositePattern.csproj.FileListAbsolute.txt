@@ -1,0 +1,11 @@
+D:\dev\patterns\CompositePattern\CompositePattern\bin\Debug\netcoreapp3.1\CompositePattern.exe
+D:\dev\patterns\CompositePattern\CompositePattern\bin\Debug\netcoreapp3.1\CompositePattern.deps.json
+D:\dev\patterns\CompositePattern\CompositePattern\bin\Debug\netcoreapp3.1\CompositePattern.runtimeconfig.json
+D:\dev\patterns\CompositePattern\CompositePattern\bin\Debug\netcoreapp3.1\CompositePattern.runtimeconfig.dev.json
+D:\dev\patterns\CompositePattern\CompositePattern\bin\Debug\netcoreapp3.1\CompositePattern.dll
+D:\dev\patterns\CompositePattern\CompositePattern\bin\Debug\netcoreapp3.1\CompositePattern.pdb
+D:\dev\patterns\CompositePattern\CompositePattern\obj\Debug\netcoreapp3.1\CompositePattern.csprojAssemblyReference.cache
+D:\dev\patterns\CompositePattern\CompositePattern\obj\Debug\netcoreapp3.1\CompositePattern.AssemblyInfoInputs.cache
+D:\dev\patterns\CompositePattern\CompositePattern\obj\Debug\netcoreapp3.1\CompositePattern.AssemblyInfo.cs
+D:\dev\patterns\CompositePattern\CompositePattern\obj\Debug\netcoreapp3.1\CompositePattern.dll
+D:\dev\patterns\CompositePattern\CompositePattern\obj\Debug\netcoreapp3.1\CompositePattern.pdb
