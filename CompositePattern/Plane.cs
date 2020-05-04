@@ -1,67 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace CompositePattern
 {
     public class Plane
     {
-        private CompositeBoardingComponent _economyClass;
-        private CompositeBoardingComponent _firstClass;
-        private CompositeBoardingComponent _businessClass;
-        public List<BoardingComponent> Stuff { get; private set; }
+        public List<BoardingComponent> Components { get; private set; }
 
-        public CompositeBoardingComponent FirstClass
-        {
-            get
-            {
-                if (_firstClass != null)
-                {
-                    return _firstClass;
-                }
-                //todo custom exception
-                throw new Exception();
-            }
-            set => _firstClass = value;
-        }
-
-        public CompositeBoardingComponent BusinessClass
-        {
-            get
-            {
-                if (_businessClass != null)
-                {
-                    return _businessClass;
-                }
-                //todo custom exception
-                throw new Exception();
-            } 
-            set => _businessClass = value;
-        }
-
-        public CompositeBoardingComponent EconomyClass
-        {
-            get
-            {
-                if (_economyClass != null)
-                {
-                    return _economyClass;
-                }
-                //todo custom exception
-                throw new Exception();
-            }
-
-            set => _economyClass = value;
-        }
-
+        public BoardingComponent FirstClass => Components.FirstOrDefault(c => c.GetType().Name == ClassTypes.FirstClass);
+        public BoardingComponent EconomyClass => Components.FirstOrDefault(c => c.GetType().Name == ClassTypes.EconomyClass);
+        public BoardingComponent BusinessClass => Components.FirstOrDefault(c => c.GetType().Name == ClassTypes.BusinessClass);
         public int LuggageMaxWeight { get; set; }
         public Plane()
         {
-            Stuff = new List<BoardingComponent>();
+            Components = new List<BoardingComponent>();
+        }
+
+        public string CreateBoardingMap()
+        {
+            var builder = new StringBuilder();
+            foreach (var component in Components)
+            {
+                builder.Append(component.CreateMap());
+            }
+
+            return builder.ToString();
         }
 
         public int GetLuggageWeight() =>
             FirstClass.GetLuggageWeight() + EconomyClass.GetLuggageWeight() + BusinessClass.GetLuggageWeight() +
-            Stuff.Sum(s => s.GetLuggageWeight());
+            Components.Sum(s => s.GetLuggageWeight());
     }
 }

@@ -11,31 +11,46 @@ namespace CompositePattern
         }
         public PlaneBuilder WithFirstClass(FirstClass firstClass)
         {
-            _plane.FirstClass = firstClass;
+            if (_plane.FirstClass != null)
+            {
+                //todo custom exception
+                throw new Exception();
+            }
+            _plane.Components.Add(firstClass);
             return this;
         }
         
         public PlaneBuilder WithEconomyClass(EconomyClass economyClass)
         {
-            _plane.EconomyClass = economyClass;
+            if (_plane.EconomyClass != null)
+            {
+                //todo custom exception
+                throw new Exception();
+            }
+            _plane.Components.Add(economyClass);
             return this;
         }
         
         public PlaneBuilder WithBusinessClass(BusinessClass businessClass)
         {
-            _plane.BusinessClass = businessClass;
+            if (_plane.BusinessClass != null)
+            {
+                //todo custom exception
+                throw new Exception();
+            }
+            _plane.Components.Add(businessClass);
             return this;
         }
         
         public PlaneBuilder WithPilot(Pilot pilot)
         {
-            _plane.Stuff.Add(pilot);
+            _plane.Components.Add(pilot);
             return this;
         }
         
         public PlaneBuilder WithStewardess(Stewardess stewardess)
         {
-            _plane.Stuff.Add(stewardess);
+            _plane.Components.Add(stewardess);
             return this;
         }
 

@@ -21,5 +21,7 @@
         {
             return 0;
         }
+
+        public override string CreateMap() => null;
     }
 }

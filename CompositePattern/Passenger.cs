@@ -29,5 +29,7 @@ namespace CompositePattern
         {
             return Luggage;
         }
+
+        public override string CreateMap() => null;
     }
 }

@@ -12,5 +12,7 @@ namespace CompositePattern
         public abstract void RemoveLuggage(int weight);
 
         public abstract int GetLuggageWeight();
+
+        public abstract string CreateMap();
     }
 }

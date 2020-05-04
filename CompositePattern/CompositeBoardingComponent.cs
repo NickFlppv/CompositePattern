@@ -20,22 +20,22 @@ namespace CompositePattern
         public virtual int MaxWeightOnPassenger { get; } = 60;
 
         public int Capacity { get; set; }
-        public List<BoardingComponent> Stuff { get; set; } = new List<BoardingComponent>();
+        public List<BoardingComponent> Components { get; set; } = new List<BoardingComponent>();
 
 
         public override void Add(BoardingComponent component)
         {
-            if (Capacity - Stuff.Count < 0)
+            if (Capacity - Components.Count < 0)
             {
                 throw new Exception();
             }
 
-            Stuff.Add(component);
+            Components.Add(component);
         }
 
         public override void Remove(BoardingComponent component)
         {
-            Stuff.Remove(component);
+            Components.Remove(component);
             Console.WriteLine("Removed passenger from plane");
         }
 
@@ -44,11 +44,15 @@ namespace CompositePattern
             throw new NotImplementedException();
         }
 
-        public override int GetLuggageWeight() => Stuff.Sum(s => s.Luggage);
+        public override int GetLuggageWeight() => Components.Sum(s => s.Luggage);
+        public override string CreateMap()
+        {
+            throw new NotImplementedException();
+        }
 
         public void AddPassengers(int count)
         {
-            if (count + Stuff.Count > Capacity)
+            if (count + Components.Count > Capacity)
             {
                 //todo custom exception
                 throw new Exception();

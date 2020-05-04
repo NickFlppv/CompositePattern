@@ -6,21 +6,36 @@ namespace CompositePattern
     {
         static void Main(string[] args)
         {
-            
-            //adding passenger to class
+            var plane = CreatePlane();
+            HandleInput(plane);
+        }
+
+        private static void HandleInput(Plane plane)
+        {
+            while (true)
+            {
+                ShowMenu();
+                var key = Console.ReadKey().KeyChar;
+                switch (key)
+                {
+                    case '0': 
+                        return;
+                }
+            }
+        }
+
+        private static Plane CreatePlane()
+        {
             var economyClass = new EconomyClass {Capacity = 150};
-            economyClass.AddPassengers(130);
-            
+
             var businessClass = new BusinessClass {Capacity = 20};
-            businessClass.AddPassengers(15);
-            
+
             var firstClass = new FirstClass {Capacity = 10};
-            firstClass.AddPassengers(5);
-            
+
             var plane = new PlaneBuilder()
-                .WithFirstClass(firstClass)
-                .WithBusinessClass(businessClass)
                 .WithEconomyClass(economyClass)
+                .WithBusinessClass(businessClass)
+                .WithFirstClass(firstClass)
                 .WithPilot(new Pilot())
                 .WithPilot(new Pilot())
                 .WithStewardess(new Stewardess())
@@ -28,11 +43,18 @@ namespace CompositePattern
                 .WithStewardess(new Stewardess())
                 .WithLuggageMaxWeight(10000)
                 .Build();
+            foreach (var s in plane.Components)
+            {
+                Console.WriteLine(s.GetType().Name);
+            }
 
-            Console.WriteLine("Luggage weight: " + plane.GetLuggageWeight());
-            Console.WriteLine("Stuff: " + plane.Stuff.Count);
-            Console.WriteLine("Passengers in economy class: " + plane.EconomyClass.Stuff.Count);
-            Console.WriteLine("Max weight on passenger in economy class: " + plane.EconomyClass.MaxWeightOnPassenger);
+            return plane;
         }
+
+        private static void ShowMenu()
+        {
+            
+        }
+  
     }
 }
