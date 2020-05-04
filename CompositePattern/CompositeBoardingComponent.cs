@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace CompositePattern
 {
@@ -45,10 +46,15 @@ namespace CompositePattern
         }
 
         public override int GetLuggageWeight() => Components.Sum(s => s.Luggage);
-        public override string CreateMap()
-        {
-            throw new NotImplementedException();
-        }
+        public override string CreateMap() => new StringBuilder()
+            .Append($"{GetType().Name}")
+            .AppendLine()
+            .Append(new string('-', 50))
+            .AppendLine()
+            .Append("Id\tName\tTicket\tLuggage")
+            .AppendLine()
+            .AppendJoin("\n", Components.Select(c => c.ToString()))
+            .ToString();
 
         public void AddPassengers(int count)
         {

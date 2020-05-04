@@ -4,6 +4,11 @@ namespace CompositePattern
 {
     public abstract class BoardingComponent
     {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string TicketHash { get; set; }
         public int Luggage { get; set; } = 0;
         public abstract void Add(BoardingComponent component);
 

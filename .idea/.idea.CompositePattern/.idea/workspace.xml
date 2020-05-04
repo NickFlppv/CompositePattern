@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f24e79-d5f5-4bdf-88bf-63642ca3769f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CompositePattern/ClassTypes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompositePattern/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompositePattern/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompositePattern/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompositePattern/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/BoardingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/BoardingComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/CompositeBoardingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/CompositeBoardingComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/Passenger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/Passenger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompositePattern/Pilot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/Pilot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/Plane.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/Plane.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompositePattern/PlaneBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/PlaneBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompositePattern/Stewardess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/Stewardess.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompositePattern/bin/Debug/netcoreapp3.1/CompositePattern.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/bin/Debug/netcoreapp3.1/CompositePattern.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompositePattern/bin/Debug/netcoreapp3.1/CompositePattern.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/bin/Debug/netcoreapp3.1/CompositePattern.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompositePattern/obj/Debug/netcoreapp3.1/CompositePattern.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/obj/Debug/netcoreapp3.1/CompositePattern.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompositePattern/obj/Debug/netcoreapp3.1/CompositePattern.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/obj/Debug/netcoreapp3.1/CompositePattern.pdb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,14 +40,14 @@
         <option value="$PROJECT_DIR$/CompositePattern/FirstClass.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/BusinessClass.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/EconomyClass.cs" />
-        <option value="$PROJECT_DIR$/CompositePattern/BoardingComponent.cs" />
-        <option value="$PROJECT_DIR$/CompositePattern/CompositeBoardingComponent.cs" />
-        <option value="$PROJECT_DIR$/CompositePattern/Passenger.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/Pilot.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/Stewardess.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/PlaneBuilder.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/ClassTypes.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/BoardingComponent.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/Passenger.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/Plane.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/CompositeBoardingComponent.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/Program.cs" />
       </list>
     </option>
@@ -111,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587987705017</updated>
       <workItem from="1587987708522" duration="11847000" />
-      <workItem from="1588602225416" duration="5302000" />
+      <workItem from="1588602225416" duration="9153000" />
     </task>
     <servers />
   </component>

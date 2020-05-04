@@ -18,16 +18,9 @@ namespace CompositePattern
             Components = new List<BoardingComponent>();
         }
 
-        public string CreateBoardingMap()
-        {
-            var builder = new StringBuilder();
-            foreach (var component in Components)
-            {
-                builder.Append(component.CreateMap());
-            }
-
-            return builder.ToString();
-        }
+        public string CreateBoardingMap() => new StringBuilder()
+                .AppendJoin("\n", Components.Select(c => c.CreateMap()))
+                .ToString();
 
         public int GetLuggageWeight() =>
             FirstClass.GetLuggageWeight() + EconomyClass.GetLuggageWeight() + BusinessClass.GetLuggageWeight() +
