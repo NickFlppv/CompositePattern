@@ -51,9 +51,11 @@ namespace CompositePattern
             .AppendLine()
             .Append(new string('-', 50))
             .AppendLine()
-            .Append("Id\tName\tTicket\tLuggage")
+            .Append("Id\t\tName\tTicket\tLuggage")
             .AppendLine()
             .AppendJoin("\n", Components.Select(c => c.ToString()))
+            .AppendLine()
+            .Append(new string('-', 50))
             .ToString();
 
         public void AddPassengers(int count)

@@ -32,6 +32,6 @@ namespace CompositePattern
 
         public override string CreateMap() => null;
 
-        public override string ToString() => $"{Id} {Name} {TicketHash} {Luggage}";
+        public override string ToString() => $"{Id}\t{Name}\t{TicketHash}\t{Luggage}";
     }
 }
