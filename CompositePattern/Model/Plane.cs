@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace CompositePattern
@@ -24,11 +25,15 @@ namespace CompositePattern
         {
             Components = new List<BoardingComponent>();
         }
-
-        public string CreateBoardingMap() => new StringBuilder()
-            .AppendJoin("\n", Components.Select(c => c.CreateMap()))
-            .ToString();
+        public IEnumerable<string> CreateMap() => Components.Select(c => c.CreateMap());
 
         public int GetLuggageWeight() => Components.Sum(s => s.GetLuggageWeight());
+        public bool RemoveLuggageFromEconomyClass(int weight) => GetBoardingClass(ClassTypes.EconomyClass).RemoveLuggage(weight);
+
+        public BoardingComponent GetBoardingClass(string classType) =>
+            GetType().InvokeMember(classType,
+                BindingFlags.DeclaredOnly |
+                BindingFlags.Public | BindingFlags.NonPublic |
+                BindingFlags.Instance | BindingFlags.GetProperty, null, this, null) as BoardingComponent;
     }
 }

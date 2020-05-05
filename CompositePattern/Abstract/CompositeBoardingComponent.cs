@@ -5,16 +5,12 @@ using System.Text;
 
 namespace CompositePattern
 {
-    public class CompositeBoardingComponent : BoardingComponent
+    public abstract class CompositeBoardingComponent : BoardingComponent
     {
-        public CompositeBoardingComponent()
-        {
-        }
+
+        private List<BoardingComponent> Components { get; set; } = new List<BoardingComponent>();
 
         public int Capacity { get; set; }
-
-        public List<BoardingComponent> Components { get; set; } = new List<BoardingComponent>();
-
 
         public override void Add(BoardingComponent component)
         {
@@ -29,22 +25,27 @@ namespace CompositePattern
         public override void Remove(BoardingComponent component)
         {
             Components.Remove(component);
-            Console.WriteLine("Removed passenger from plane");
+            Console.WriteLine($"Removed passenger from {GetType().Name}");
         }
 
-        public override void RemoveLuggage(int weight)
+        public override bool RemoveLuggage(int weight)
         {
-            throw new NotImplementedException();
+            Components
+                .ForEach(p =>
+                {
+                    if (weight <= 0) return;
+
+                    weight -= p.LuggageWeight;
+                    p.LuggageWeight = 0;
+                });
+            return true;
         }
 
         public override int GetLuggageWeight() => Components.Sum(s => s.LuggageWeight);
         public override string CreateMap() => new StringBuilder()
-            .Append($"{GetType().Name}")
-            .AppendLine()
-            .Append(new string('-', 50))
-            .AppendLine()
-            .Append("Id\t\tName\tTicket\tLuggage")
-            .AppendLine()
+            .AppendLine($"{GetType().Name}")
+            .AppendLine(new string('-', 50))
+            .AppendLine("Id\t\tName\tSeat\tLuggage")
             .AppendJoin("\n", Components.Select(c => c.ToString()))
             .AppendLine()
             .Append(new string('-', 50))

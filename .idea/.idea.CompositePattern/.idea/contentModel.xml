@@ -6,14 +6,25 @@
     <e p="C:\Users\Admin\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_CompositePattern.1531830084.00" t="ExcludeRecursive" />
     <e p="D:\dev\patterns\CompositePattern" t="IncludeFlat">
       <e p="CompositePattern" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="BoardingComponent.cs" t="Include" />
+          <e p="CompositeBoardingComponent.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="BoardingComponent.cs" t="Include" />
-        <e p="BusinessClass.cs" t="Include" />
-        <e p="ClassTypes.cs" t="Include" />
-        <e p="CompositeBoardingComponent.cs" t="Include" />
         <e p="CompositePattern.csproj" t="IncludeRecursive" />
-        <e p="EconomyClass.cs" t="Include" />
-        <e p="FirstClass.cs" t="Include" />
+        <e p="Model" t="Include">
+          <e p="BusinessClass.cs" t="Include" />
+          <e p="ClassTypes.cs" t="Include" />
+          <e p="EconomyClass.cs" t="Include" />
+          <e p="FirstClass.cs" t="Include" />
+          <e p="Passenger.cs" t="Include" />
+          <e p="Pilot.cs" t="Include" />
+          <e p="Plane.cs" t="Include" />
+          <e p="PlaneBuilder.cs" t="Include" />
+          <e p="PlaneExtensions.cs" t="Include" />
+          <e p="PlaneParameters.cs" t="Include" />
+          <e p="Stewardess.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -21,13 +32,7 @@
             </e>
           </e>
         </e>
-        <e p="Passenger.cs" t="Include" />
-        <e p="Pilot.cs" t="Include" />
-        <e p="Plane.cs" t="Include" />
-        <e p="PlaneBuilder.cs" t="Include" />
-        <e p="PlaneParameters.cs" t="Include" />
         <e p="Program.cs" t="Include" />
-        <e p="Stewardess.cs" t="Include" />
       </e>
       <e p="CompositePattern.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

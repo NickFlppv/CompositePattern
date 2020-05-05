@@ -4,25 +4,19 @@ namespace CompositePattern
 {
     public class Passenger : BoardingComponent
     {
-        public Passenger()
-        {
-            
-        }
-        
         public override void Add(BoardingComponent component)
         {
-            throw new System.NotImplementedException();
         }
 
         public override void Remove(BoardingComponent component)
         {
-            throw new System.NotImplementedException();
         }
 
-        public override void RemoveLuggage(int weight)
+        public override bool RemoveLuggage(int weight)
         {
             this.LuggageWeight -= weight;
             Console.WriteLine($"Removed {weight} from luggage");
+            return true;
         }
 
         public override int GetLuggageWeight()
@@ -32,6 +26,6 @@ namespace CompositePattern
 
         public override string CreateMap() => null;
 
-        public override string ToString() => $"{Id}\t{Name}\t{TicketHash}\t{LuggageWeight}";
+        public override string ToString() => $"{Id}\t{Name}\t{Seat}\t{LuggageWeight}";
     }
 }

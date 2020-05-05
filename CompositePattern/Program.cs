@@ -39,9 +39,9 @@ namespace CompositePattern
 
         private static void HandleInput(Plane plane)
         {
-            ShowMenu();
             while (true)
             {
+                ShowMenu();
                 Console.Write("Enter command: ");
                 var key = Console.ReadKey().KeyChar;
                 switch (key)
@@ -52,7 +52,7 @@ namespace CompositePattern
                         try
                         {
                             Console.WriteLine();
-                            RegisterPassenger(plane);
+                            plane.RegisterPassenger();
                         }
                         catch (MissingMethodException e)
                         {
@@ -66,48 +66,33 @@ namespace CompositePattern
                         break;
                     case '2':
                         Console.WriteLine();
-                        Task.Run(() => ShowBoardingMap(plane));
+                        plane.ShowBoardingMap();
+                        break;
+                    case '3':
+                        Console.WriteLine();
+                        Console.WriteLine(plane.LuggageWeightCheckToString());
+                        break;
+                    case '4':
+                        Console.WriteLine();
+                        Console.WriteLine("Enter weight to remove:");
+                        try
+                        {
+                            var _ = int.TryParse(Console.ReadLine(), out var weight)
+                                ? plane.RemoveLuggageFromEconomyClass(weight)
+                                : throw new InvalidOperationException("Wrong weight input");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+
                         break;
                     default:
+                        Console.WriteLine();
                         break;
                 }
             }
         }
-
-        private static void ShowBoardingMap(Plane plane) => Console.WriteLine(plane.CreateBoardingMap());
-
-        private static void RegisterPassenger(Plane plane)
-        {
-            Console.WriteLine("Choose class (Economy, Business, First):");
-            var classType = Console.ReadLine();
-            Console.WriteLine("Enter passenger`s name:");
-            var name = Console.ReadLine();
-            Console.WriteLine("Enter passenger`s ticket:");
-            var ticket = Console.ReadLine();
-            Console.WriteLine($"*Allowed weights (kg)*\nEconomy: < {plane.EconomyClass.AllowedLuggageWeight}\n" +
-                              $"Business: < {plane.BusinessClass.AllowedLuggageWeight}\nFirst: < {plane.FirstClass.AllowedLuggageWeight}");
-            Console.WriteLine("Enter passenger`s luggage (kg):");
-            var luggageWeight = Console.ReadLine();
-
-            var boardingClass = GetBoardingClass(plane, classType);
-
-            boardingClass.Add(new Passenger
-            {
-                Id = new Random().Next(),
-                Name = name,
-                TicketHash = ticket,
-                LuggageWeight = int.TryParse(luggageWeight, out var res) && res >= 0 &&
-                                res <= boardingClass.AllowedLuggageWeight
-                    ? res
-                    : throw new InvalidOperationException("Wrong luggage input")
-            });
-        }
-
-        private static BoardingComponent GetBoardingClass(Plane plane, string classType) =>
-            plane.GetType().InvokeMember($"{classType}Class",
-                BindingFlags.DeclaredOnly |
-                BindingFlags.Public | BindingFlags.NonPublic |
-                BindingFlags.Instance | BindingFlags.GetProperty, null, plane, null) as BoardingComponent;
 
         private static Plane CreatePlane(PlaneParameters parameters) =>
             new PlaneBuilder()
@@ -126,6 +111,8 @@ namespace CompositePattern
             Console.WriteLine("0 - exit");
             Console.WriteLine("1 - register passenger");
             Console.WriteLine("2 - show boarding map");
+            Console.WriteLine("3 - check luggage weight");
+            Console.WriteLine("4 - remove luggage");
         }
     }
 }
