@@ -9,7 +9,9 @@ namespace CompositePattern
         public string Name { get; set; }
 
         public string TicketHash { get; set; }
-        public int Luggage { get; set; } = 0;
+        public int LuggageWeight { get; set; } = 0;
+        public virtual int AllowedLuggageWeight { get; set; }
+
         public abstract void Add(BoardingComponent component);
 
         public abstract void Remove(BoardingComponent component);

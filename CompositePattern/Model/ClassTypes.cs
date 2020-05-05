@@ -1,6 +1,6 @@
 ﻿namespace CompositePattern
 {
-    public class ClassTypes
+    public static class ClassTypes
     {
         public const string EconomyClass = "EconomyClass";
         public const string BusinessClass = "BusinessClass";

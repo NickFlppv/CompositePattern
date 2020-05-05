@@ -9,18 +9,10 @@ namespace CompositePattern
     {
         public CompositeBoardingComponent()
         {
-            
         }
-        
-        public CompositeBoardingComponent(int maxWeightOnPassenger, int capacity)
-        {
-            MaxWeightOnPassenger = maxWeightOnPassenger;
-            Capacity = capacity;
-        }
-
-        public virtual int MaxWeightOnPassenger { get; } = 60;
 
         public int Capacity { get; set; }
+
         public List<BoardingComponent> Components { get; set; } = new List<BoardingComponent>();
 
 
@@ -45,7 +37,7 @@ namespace CompositePattern
             throw new NotImplementedException();
         }
 
-        public override int GetLuggageWeight() => Components.Sum(s => s.Luggage);
+        public override int GetLuggageWeight() => Components.Sum(s => s.LuggageWeight);
         public override string CreateMap() => new StringBuilder()
             .Append($"{GetType().Name}")
             .AppendLine()
@@ -68,7 +60,7 @@ namespace CompositePattern
 
             for (int i = 0; i < count; i++)
             {
-                Add(new Passenger{Luggage = 20});
+                Add(new Passenger{LuggageWeight = 20});
             }
 
             Console.WriteLine($"Added {count} passengers");

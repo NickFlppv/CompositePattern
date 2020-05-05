@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1f24e79-d5f5-4bdf-88bf-63642ca3769f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CompositePattern/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompositePattern/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CompositePattern/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CompositePattern/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompositePattern/BoardingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/BoardingComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompositePattern/BusinessClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/BusinessClass.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompositePattern/ClassTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/ClassTypes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/CompositeBoardingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/CompositeBoardingComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompositePattern/EconomyClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/EconomyClass.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompositePattern/FirstClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/FirstClass.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/Passenger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/Passenger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompositePattern/Plane.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/Plane.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/PlaneParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/PlaneParameters.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompositePattern/bin/Debug/netcoreapp3.1/CompositePattern.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CompositePattern/bin/Debug/netcoreapp3.1/CompositePattern.dll" afterDir="false" />
@@ -29,6 +34,7 @@
     <setting file="file://$PROJECT_DIR$/CompositePattern/BoardingComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CompositePattern/CompositeBoardingComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CompositePattern/PlaneParameters.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/548AD7F3-3950-40A3-9A42-117E6E6C3089/26/b95316ff/0200000Dpdb.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CompositePattern/PlaneBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CompositePattern/ClassTypes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6A2778C7-E75B-4D78-81DF-6B1F295F3EF0/5a/4db9d1b2/IQueryable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -42,18 +48,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CompositePattern/FirstClass.cs" />
-        <option value="$PROJECT_DIR$/CompositePattern/BusinessClass.cs" />
-        <option value="$PROJECT_DIR$/CompositePattern/EconomyClass.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/Pilot.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/Stewardess.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/PlaneBuilder.cs" />
-        <option value="$PROJECT_DIR$/CompositePattern/ClassTypes.cs" />
-        <option value="$PROJECT_DIR$/CompositePattern/BoardingComponent.cs" />
-        <option value="$PROJECT_DIR$/CompositePattern/Plane.cs" />
-        <option value="$PROJECT_DIR$/CompositePattern/PlaneParameters.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/Passenger.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/BusinessClass.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/ClassTypes.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/EconomyClass.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/FirstClass.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/PlaneParameters.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/Plane.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/CompositeBoardingComponent.cs" />
+        <option value="$PROJECT_DIR$/CompositePattern/BoardingComponent.cs" />
         <option value="$PROJECT_DIR$/CompositePattern/Program.cs" />
       </list>
     </option>
@@ -64,6 +70,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -108,7 +115,8 @@
       <option name="presentableId" value="Default" />
       <updated>1587987705017</updated>
       <workItem from="1587987708522" duration="11847000" />
-      <workItem from="1588602225416" duration="12534000" />
+      <workItem from="1588602225416" duration="13786000" />
+      <workItem from="1588618576892" duration="3879000" />
     </task>
     <servers />
   </component>
@@ -122,7 +130,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -138,19 +148,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CompositePattern/Program.cs</url>
-          <line>99</line>
-          <properties documentPath="$PROJECT_DIR$/CompositePattern/Program.cs" initialLine="99">
-            <startOffsets>
-              <option value="3197" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3459" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

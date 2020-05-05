@@ -2,6 +2,6 @@
 {
     public class BusinessClass : CompositeBoardingComponent
     {
-        public override int MaxWeightOnPassenger { get; } = 35;
+        public override int AllowedLuggageWeight { get; set; } = 35;
     }
 }

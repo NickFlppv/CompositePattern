@@ -54,7 +54,11 @@ namespace CompositePattern
                             Console.WriteLine();
                             RegisterPassenger(plane);
                         }
-                        catch (Exception e)
+                        catch (MissingMethodException e)
+                        {
+                            Console.WriteLine("Couldn't define boarding class");
+                        }
+                        catch (InvalidOperationException e)
                         {
                             Console.WriteLine(e.Message);
                         }
@@ -80,20 +84,23 @@ namespace CompositePattern
             var name = Console.ReadLine();
             Console.WriteLine("Enter passenger`s ticket:");
             var ticket = Console.ReadLine();
+            Console.WriteLine($"*Allowed weights (kg)*\nEconomy: < {plane.EconomyClass.AllowedLuggageWeight}\n" +
+                              $"Business: < {plane.BusinessClass.AllowedLuggageWeight}\nFirst: < {plane.FirstClass.AllowedLuggageWeight}");
             Console.WriteLine("Enter passenger`s luggage (kg):");
-            var luggage = Console.ReadLine();
+            var luggageWeight = Console.ReadLine();
 
-            (GetBoardingClass(plane, classType) ??
-             throw new InvalidOperationException("Couldn't define boarding class"))
-                .Add(new Passenger
-                {
-                    Id = new Random().Next(),
-                    Name = name,
-                    TicketHash = ticket,
-                    Luggage = int.TryParse(luggage, out var res)
-                        ? res
-                        : throw new InvalidOperationException("Wrong luggage input")
-                });
+            var boardingClass = GetBoardingClass(plane, classType);
+
+            boardingClass.Add(new Passenger
+            {
+                Id = new Random().Next(),
+                Name = name,
+                TicketHash = ticket,
+                LuggageWeight = int.TryParse(luggageWeight, out var res) && res >= 0 &&
+                                res <= boardingClass.AllowedLuggageWeight
+                    ? res
+                    : throw new InvalidOperationException("Wrong luggage input")
+            });
         }
 
         private static BoardingComponent GetBoardingClass(Plane plane, string classType) =>
@@ -112,7 +119,6 @@ namespace CompositePattern
                 .WithStewardess(new Stewardess())
                 .WithStewardess(new Stewardess())
                 .WithStewardess(new Stewardess())
-                .WithLuggageMaxWeight(10000)
                 .Build();
 
         private static void ShowMenu()

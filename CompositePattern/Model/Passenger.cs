@@ -21,17 +21,17 @@ namespace CompositePattern
 
         public override void RemoveLuggage(int weight)
         {
-            this.Luggage -= weight;
+            this.LuggageWeight -= weight;
             Console.WriteLine($"Removed {weight} from luggage");
         }
 
         public override int GetLuggageWeight()
         {
-            return Luggage;
+            return LuggageWeight;
         }
 
         public override string CreateMap() => null;
 
-        public override string ToString() => $"{Id}\t{Name}\t{TicketHash}\t{Luggage}";
+        public override string ToString() => $"{Id}\t{Name}\t{TicketHash}\t{LuggageWeight}";
     }
 }
